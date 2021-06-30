@@ -5,10 +5,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @author = @post.author
   end
 
   def new
     @post = Post.new
+    @author = @post.author
   end
 
   def create
@@ -23,6 +25,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @author = @post.author
   end
 
   def update
